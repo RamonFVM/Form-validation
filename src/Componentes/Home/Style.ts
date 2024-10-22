@@ -47,7 +47,7 @@ export const DivForm = styled.div`
         border: 1px solid #ccc; 
         border-radius: 4px;   
         font-size: 20px;      
-        text-align: center;    
+        text-align:left;    
     }
 
     button {
@@ -66,6 +66,15 @@ export const DivForm = styled.div`
 
         &:hover {
             background-color: #0056b3; 
+        }
+
+        span{
+
+        font-size:1.6rem;
+        margin.1.0rem
+        font-family: 'Arial', sans-serif;
+        
+        
         }
     }
 `;
