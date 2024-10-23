@@ -1,15 +1,14 @@
-import { Home } from "./Componentes/Home/Home"
+
+import GlobalStyle from './Global'
+import { Home } from './Componentes/Home/Home'; // Ajuste o caminho conforme necessário
 
 function App() {
- 
-
-  return (
-
-    <div>
-       <Home/>
-    </div>
-
-  )
+    return (
+        <>
+            <GlobalStyle />
+            <Home />
+        </>
+    );
 }
 
-export default App
+export default App;
