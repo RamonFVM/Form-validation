@@ -1,6 +1,5 @@
 import styled from "styled-components";
-
-export const DivForm = styled.div`
+export const DivRegister = styled.div`
     display: flex;           
     flex-direction: column;  
     justify-content: center;  
@@ -8,15 +7,16 @@ export const DivForm = styled.div`
     margin: auto;            
     height: 100vh;          
     padding: 20px;
+  
 
     form {
         background: rgba(255, 255, 255, 0.0); 
         width: 80%;   
         max-width: 500px;      
-        height: 500px;       
+        height: auto;
         border-radius: 16px;    
         padding: 20px;         
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); 
         display: flex;         
         flex-direction: column;
         align-items: center;    
@@ -24,9 +24,9 @@ export const DivForm = styled.div`
 
     h1 {
         font-family: 'Arial', sans-serif;
-        color: white;
-        font-size: 16px;
-        margin: 1.6rem;
+        color: #fff; 
+        font-size: 24px; 
+        margin: 1.6rem 0; 
     }
 
     div {
@@ -38,50 +38,51 @@ export const DivForm = styled.div`
     }
 
     label {
-        margin: 1.8rem;
-        margin-bottom: 5px;   
+        margin: 1.0rem 0;   
         display: block;        
         font-weight: bold;     
         text-align: center;    
-        font-size: 28px;       
+        font-size: 20px;       
         font-family: 'Arial', sans-serif;
-        color: white;
+        color: #fff;
     }
 
     input {
-        width: 60%;            
+        width: 90%; 
         padding: 10px;        
-        border-radius: 16px;   
-        font-size: 20px;      
+        border-radius: 8px;   
+        font-size: 18px;      
         text-align: left;   
-        color: white; 
+        color: #fff; 
         background-color: rgba(255, 255, 255, 0.2); 
         border: none;
-        margin: 8px;
+        margin: 8px 0;
         
         &::placeholder {
             color: #fff; 
-            opacity: 1; 
+            opacity: 0.8; 
         }
 
         &:focus {
             border: none; 
             outline: none; 
+            background-color: rgba(255, 255, 255, 0.3); 
         }
     }
 
     button {
         padding: 10px;   
         background: rgba(255, 255, 255, 0.1);    
-        color: white;      
+        color: #fff;      
         border: none;       
         border-radius: 6px; 
         cursor: pointer;    
         margin-top: 15px;   
         display: block;      
-        width: 30%;         
+        width: 40%; 
+        heigth: 80%
         text-align: center;
-        font-size: 22px;
+        font-size: 16px;
         transition: background-color 0.3s ease, transform 0.3s ease; 
 
         &:hover {
@@ -104,7 +105,7 @@ export const DivForm = styled.div`
         font-family: 'Arial', sans-serif;
 
         a {
-            color: white; 
+            color: #fff; 
             text-decoration: none; 
             margin-left: 15px;
             font-size: 16px;

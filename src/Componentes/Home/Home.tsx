@@ -2,7 +2,9 @@ import { DivForm } from './Style';
 import { useSpring, animated } from 'react-spring';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Schema, z } from 'zod';
+import { z } from 'zod';
+import { NavLink } from 'react-router-dom';
+import { User } from 'phosphor-react';
 
 
 const schema = z.object({
@@ -16,6 +18,7 @@ export function Home() {
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
         resolver: zodResolver(schema), 
     });
+    
     const props = useSpring({
         opacity: 1, 
         from: { opacity: 0 },
@@ -24,38 +27,48 @@ export function Home() {
 
     const onSubmit = (data: FormData) => {
         console.log('Dados do formulário:', data);
-      
     };
 
     return (
         <DivForm> 
             <animated.form style={props} onSubmit={handleSubmit(onSubmit)}>
-
-                       
                 <div>
                     <label htmlFor="username">Login</label>
-                    <input 
-                        type="text" 
-                        id="username" 
-                        placeholder="Nome do usuário ou email" 
-                        {...register('username', { required: 'Usuário é obrigatório' })}
-                       
-                    />
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        
+                        <input 
+                            type="text" 
+                            id="username" 
+                            placeholder="email" 
+                            {...register('username')}
+                        />
+                    </div>
                     {errors.username && <span>{errors.username.message}</span>}
                 </div>
 
                 <div>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        placeholder="Senha" 
-                        {...register('password', { required: 'Senha é obrigatória' })}
-                       
-                    />
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                     
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Senha" 
+                            {...register('password')}
+                        />
+                    </div>
                     {errors.password && <span>{errors.password.message}</span>}
                 </div>
 
                 <button type="submit">Entrar</button>
+
+
+                <nav>
+                    <User size={16} />
+                    <NavLink to="Cadastro">se cadastrar</NavLink>
+                </nav>
+                
+
+            
             </animated.form>
         </DivForm>
     );
