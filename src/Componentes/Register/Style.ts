@@ -7,13 +7,11 @@ export const DivRegister = styled.div`
     margin: auto;            
     height: 100vh;          
     padding: 20px;
-  
 
     form {
         background: rgba(255, 255, 255, 0.0); 
-        width: 80%;   
+        width: 100%;   
         max-width: 500px;      
-        height: auto;
         border-radius: 16px;    
         padding: 20px;         
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); 
@@ -50,7 +48,7 @@ export const DivRegister = styled.div`
     input {
         width: 90%; 
         padding: 10px;        
-        border-radius: 8px;   
+        border-radius: 10px;   
         font-size: 18px;      
         text-align: left;   
         color: #fff; 
@@ -67,6 +65,7 @@ export const DivRegister = styled.div`
             border: none; 
             outline: none; 
             background-color: rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); 
         }
     }
 
@@ -80,13 +79,13 @@ export const DivRegister = styled.div`
         margin-top: 15px;   
         display: block;      
         width: 40%; 
-        heigth: 80%
+        height: 80%; 
         text-align: center;
         font-size: 16px;
         transition: background-color 0.3s ease, transform 0.3s ease; 
 
         &:hover {
-            background-color: #66CDAA; 
+            background-color: #00FFFF; 
             transform: scale(1.05); 
         }
 

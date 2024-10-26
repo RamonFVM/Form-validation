@@ -8,14 +8,14 @@ import { User } from 'phosphor-react';
 
 
 const schema = z.object({
-    username: z.string().min(1, 'Usuário é obrigatório'),
+    email: z.string().min(6, 'Usuário é obrigatório'),
     password: z.string().min(1, 'Senha é obrigatória'),
 });
 
 type FormData = z.infer<typeof schema>;
 
 export function Home() {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+    const { register, handleSubmit, reset,  formState: { errors } } = useForm<FormData>({
         resolver: zodResolver(schema), 
     });
     
@@ -27,23 +27,24 @@ export function Home() {
 
     const onSubmit = (data: FormData) => {
         console.log('Dados do formulário:', data);
+        reset()
     };
 
     return (
         <DivForm> 
             <animated.form style={props} onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <label htmlFor="username">Login</label>
+                    <label htmlFor="email">Login</label>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         
                         <input 
                             type="text" 
-                            id="username" 
-                            placeholder="email" 
-                            {...register('username')}
+                            id="email" 
+                            placeholder="Email" 
+                            {...register('email')}
                         />
                     </div>
-                    {errors.username && <span>{errors.username.message}</span>}
+                    {errors.email && <span>{errors.email.message}</span>}
                 </div>
 
                 <div>
