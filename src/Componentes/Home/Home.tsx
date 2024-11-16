@@ -42,6 +42,7 @@ export function Home() {
                             id="email" 
                             placeholder="Email" 
                             {...register('email')}
+                            required
                         />
                     </div>
                     {errors.email && <span>{errors.email.message}</span>}
@@ -55,6 +56,8 @@ export function Home() {
                             id="password" 
                             placeholder="Senha" 
                             {...register('password')}
+                            required
+                            
                         />
                     </div>
                     {errors.password && <span>{errors.password.message}</span>}
